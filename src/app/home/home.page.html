@@ -1,20 +1,50 @@
-<ion-header [translucent]="true">
+<ion-header >
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>!Ahora eres parte del cambio¡</ion-title>
+    <ion-img  slot="start"  style="width: 40px; margin-left:10px;" src="assets/img/Icon-Soul.svg"></ion-img>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content  *ngIf="!login" [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="ion-justify-content-around ion-align-items-center ion-margin">
+      <ion-col style="text-align: center" size="12">
+        <ion-label>Ingresa tu identificación</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-around ion-margin-top">
+      <ion-col size="8">
+        <ion-item>
+          <ion-label position="floating"
+            >Ingrese número de identificación...</ion-label
+          >
+          <ion-input [(ngModel)]="documento"  ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="2"
+        ><ion-button (click)="getLogin()" expand="block" fill="solid" >
+          Ingresar
+        </ion-button></ion-col
+      >
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    </ion-row>
+    <ion-row class="ion-margin-top">
+      <ion-col style="text-align: center" size="12">
+        <h4>
+          Desarrollado con el
+          <ion-icon color="danger" name="heart"></ion-icon> por montechelo
+        </h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-content *ngIf="login">
+  <ion-grid fixed>
+    <ion-row style="text-align: center;" >
+      <ion-col size="12"><ion-progress-bar value="0.5" buffer="0.7"></ion-progress-bar>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -1,0 +1,8 @@
+<ion-item>
+  <ion-label> {{this.preguntas['question']}} </ion-label>
+  <ion-select [(ngModel)]="respuestaMultiselect" multiple="true" cancelText="Cancelar" okText="Confirmar">
+    <div class="container" *ngFor="let item of this.preguntas['questionAnswer']" >  
+      <ion-select-option [value]="item.id">{{item.answer}}</ion-select-option>
+    </div>
+  </ion-select>
+</ion-item>

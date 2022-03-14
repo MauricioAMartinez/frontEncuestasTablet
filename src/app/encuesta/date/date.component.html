@@ -1,0 +1,15 @@
+<ion-item button="true" id="open-date-input">
+  <ion-label> {{preguntas['question']}} </ion-label>
+  <ion-text slot="end"> {{respuestaDate}} </ion-text>
+  <ion-popover trigger="open-date-input" show-backdrop="false">
+    <ng-template>
+      <ion-datetime
+      placeholder="respuestaDate"
+        presentation="date"
+        [(ngModel)]="respuestaDate"
+        [value]="respuestaDate"
+        (ionChange)="CambioFecha($event)"
+      ></ion-datetime>
+    </ng-template>
+  </ion-popover>
+</ion-item>

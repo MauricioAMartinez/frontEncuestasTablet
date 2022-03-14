@@ -1,0 +1,17 @@
+<ion-list>
+  <ion-radio-group  [(ngModel)]="respuestaRadio"  value="biff">
+    <ion-list-header>
+      <ion-label> {{preguntas['question']}} </ion-label>
+    </ion-list-header>
+    <div class="container" *ngFor="let item of this.preguntas['questionAnswer']" >
+
+      <ion-item  > 
+        <ion-label> {{item.answer}} </ion-label>
+        <ion-radio   slot="start" [value]="item.id"> {{item.answer}} </ion-radio>
+      </ion-item>
+
+    </div>
+
+
+  </ion-radio-group>
+</ion-list>

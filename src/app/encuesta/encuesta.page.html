@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>encuesta</ion-title>
+    <ion-img
+      slot="start"
+      style="width: 40px"
+      src="assets/img/Icon-Soul.svg"
+    ></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <br>
+  <div class="container" *ngFor="let item of preguntas">
+
+    <app-input  [preguntas]="item" *ngIf="item.type_id == 1"></app-input>
+    <app-select  [preguntas]="item" *ngIf="item.type_id == 3"></app-select>
+    <app-multi-select [preguntas]="item" *ngIf="item.type_id == 4" ></app-multi-select>
+    <app-radio  [preguntas]="item" *ngIf="item.type_id == 5" ></app-radio>
+    <app-time [preguntas]="item" *ngIf="item.type_id == 7"></app-time>
+    <app-date  [preguntas]="item" *ngIf="item.type_id == 6" ></app-date>
+    <app-text-area  [preguntas]="item" *ngIf="item.type_id == 2"></app-text-area>
+
+  </div>
+
+  <ion-button (click)="setRespuestas()" expand="block" fill="solid" shape="round">
+    Enviar
+  </ion-button>
+
+</ion-content>
